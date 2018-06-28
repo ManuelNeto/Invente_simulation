@@ -6,12 +6,12 @@ import eduni.simjava.distributions.*;
 
 public class Data_base extends Sim_entity {
 	
-	private Sim_poisson_obj delay;
+	private Sim_normal_obj delay;
 	private Sim_port in_post, in_put, in_get, in_delete, out;
 	
-	public Data_base (String name, double mean) {
+	public Data_base (String name, double mean, double var) {
 		super(name);
-		this.delay = new Sim_poisson_obj("Delay", mean);
+		this.delay = new Sim_normal_obj("Delay", mean, var);
 		in_post = new Sim_port("In_post");
 		in_put = new Sim_port("In_put");
 		in_get = new Sim_port("In_get");
