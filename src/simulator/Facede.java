@@ -44,7 +44,7 @@ public class Facede extends Sim_entity{
 			sim_process(delay.sample());
 			sim_completed(e);
 			double p = prob.sample();
-			if (p < 0.35) {
+			if (p < 0.30) {
 				sim_schedule(out_post, 0.0, 1);
 			} else if (p < 0.50) {
 				sim_schedule(out_put, 0.0, 1);
