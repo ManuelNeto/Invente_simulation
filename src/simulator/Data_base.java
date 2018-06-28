@@ -2,12 +2,14 @@ package simulator;
 
 import eduni.simjava.Sim_entity;
 import eduni.simjava.Sim_port;
+import eduni.simjava.Sim_stat;
 import eduni.simjava.distributions.*;
 
 public class Data_base extends Sim_entity {
 	
 	private Sim_normal_obj delay;
 	private Sim_port in_post, in_put, in_get, in_delete, out;
+	private Sim_stat stat;
 	
 	public Data_base (String name, double mean, double var) {
 		super(name);
@@ -23,6 +25,11 @@ public class Data_base extends Sim_entity {
 		add_port(in_delete);
 		add_port(out);
 		add_generator(delay);
+		stat = new Sim_stat();
+		stat.add_measure(Sim_stat.UTILISATION);
+		stat.add_measure(Sim_stat.WAITING_TIME);
+		stat.add_measure(Sim_stat.QUEUE_LENGTH);
+		
 	}
 
 }

@@ -7,6 +7,7 @@ public class Source extends Sim_entity{
 	
 	private Sim_normal_obj delay;
 	private Sim_port out;
+	private Sim_stat stat;
 	
 	public Source(String name, double mean, double var) {
 		super(name);
@@ -14,6 +15,11 @@ public class Source extends Sim_entity{
 		out = new Sim_port("Out");
 		add_port(out);
 		add_generator(delay);
+		stat = new Sim_stat();
+		stat.add_measure(Sim_stat.UTILISATION);
+		stat.add_measure(Sim_stat.WAITING_TIME);
+		stat.add_measure(Sim_stat.QUEUE_LENGTH);
+		set_stat(stat);
 	}
 	
 	public void body() {
