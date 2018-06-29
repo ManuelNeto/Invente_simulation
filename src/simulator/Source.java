@@ -1,6 +1,7 @@
 package simulator;
 
 import eduni.simjava.*;
+
 import eduni.simjava.distributions.*;  
 
 public class Source extends Sim_entity{
@@ -19,6 +20,8 @@ public class Source extends Sim_entity{
 		stat.add_measure(Sim_stat.UTILISATION);
 		stat.add_measure(Sim_stat.WAITING_TIME);
 		stat.add_measure(Sim_stat.QUEUE_LENGTH);
+		stat.add_measure(Sim_stat.ARRIVAL_RATE);
+		stat.add_measure(Sim_stat.RESIDENCE_TIME);
 		set_stat(stat);
 	}
 	
